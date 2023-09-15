@@ -277,7 +277,7 @@ export default function Menu() {
                   </div>
                   <div className="pl-3 max-w-[160px] ">
                     <h5 className=" text-black leading-snug overflow-hidden">
-                      {comida.image}
+                      {comida.name}
                     </h5>
                     <p className="text-populetter leading-snug pb-2 max-h- overflow-hidden text-ellipsis">
                       {MaxLength(comida.description, 35)}
