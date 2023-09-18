@@ -133,7 +133,6 @@ export default function Menu() {
   }  
 */
 
-
   const getAllMenus = async () => {
     try {
       await axios.get("http://localhost:3001/menu").then((response) => {
@@ -167,6 +166,7 @@ export default function Menu() {
   const [showPedido, setShowPedido] = useState(false);
   const [keyPlato, setKeyPlato] = useState(0);
   const [arrayUsed, setarrayUsed] = useState(0);
+
 
   const handleclick = (key: number, estado: boolean, array: number) => {
     setShowPopUP(estado);
@@ -213,14 +213,15 @@ export default function Menu() {
                 >
                   <div className="h-[105px] w-[150px] mx-2 mt-1 overflow-hidden grid content-center">
                     <img
-                      src={comida.name}
+                      src={comida.image}
                       alt=""
                       className="rounded-lg min-h-full min-w-full"
-                    />
+                    >
+                    </img>
                   </div>
                   <div className="pl-3 max-w-[160px] ">
                     <h5 className=" text-black leading-snug overflow-hidden">
-                      {comida.image}
+                      {comida.name}
                     </h5>
                     <p className="text-populetter leading-snug pb-2 max-h- overflow-hidden text-ellipsis">
                       {MaxLength(comida.description, 35)}
@@ -242,14 +243,14 @@ export default function Menu() {
                 >
                   <div className="h-[105px] w-[150px] mx-2 mt-1 overflow-hidden grid content-center">
                     <img
-                      src={comida.name}
+                      src={comida.image}
                       alt=""
                       className="rounded-lg min-h-full min-w-full"
                     />
                   </div>
                   <div className="pl-3 max-w-[160px] ">
                     <h5 className=" text-black leading-snug overflow-hidden">
-                      {comida.image}
+                      {comida.name}
                     </h5>
                     <p className="text-populetter leading-snug pb-2 max-h- overflow-hidden text-ellipsis">
                       {MaxLength(comida.description, 35)}
@@ -270,7 +271,7 @@ export default function Menu() {
                 >
                   <div className="h-[105px] w-[150px] mx-2 mt-1 overflow-hidden grid content-center">
                     <img
-                      src={comida.name}
+                      src={comida.image}
                       alt=""
                       className="rounded-lg min-h-full min-w-full"
                     />

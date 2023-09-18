@@ -6,8 +6,8 @@ interface a {
   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const HeaderPopUp: React.FC<a> = ({url, setShowPopUP, setShowMenu}) => {
-  const HandleClick = () =>{
+const HeaderPopUp: React.FC<a> = ({ url, setShowPopUP, setShowMenu }) => {
+  const HandleClick = () => {
     setShowPopUP(false);
     setShowMenu(true);
 
@@ -15,7 +15,7 @@ const HeaderPopUp: React.FC<a> = ({url, setShowPopUP, setShowMenu}) => {
   return <header className="flex w-screen top-0  h-[204px] overflow-hidden items-center">
     <div className=" h-fit w-fit relative  " id="FotoComida">
       <img
-        src={url} 
+        src={url}
         alt=""
         className="h-[100%] w-[100%] "
       >
@@ -25,6 +25,6 @@ const HeaderPopUp: React.FC<a> = ({url, setShowPopUP, setShowMenu}) => {
         <img src="arrowWhite.svg" alt="" /></button>
     </div>
   </header>;
-  
+
 }
 export default HeaderPopUp;
