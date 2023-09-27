@@ -102,7 +102,7 @@ export default function Menu() {
 
     console.log(menuItems);
 
-    const entradas = menuItems.filter((item) => item.category === "entradas");
+    const entradas = menuItems.filter((item) => item.category === "entrada");
     const principales = menuItems.filter((item) => item.category === "plato principal");
     const postres = menuItems.filter((item) => item.category === "postre");
 
