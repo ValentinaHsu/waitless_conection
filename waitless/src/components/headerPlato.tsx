@@ -12,12 +12,12 @@ const HeaderPopUp: React.FC<a> = ({ url, setShowPopUP, setShowMenu }) => {
     setShowMenu(true);
 
   }
-  return <header className="flex w-screen top-0  h-[204px] overflow-hidden items-center">
+  return <header className="flex w-screen top-0 h-[204px] overflow-hidden items-center">
     <div className=" h-fit w-fit relative  " id="FotoComida">
       <img
         src={url}
         alt=""
-        className="h-[100%] w-[100%] "
+        className="h-full w-full "
       >
       </img>
       <div className="absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center z-10 bg-gradient-to-b from-black opacity-[0.55]" />

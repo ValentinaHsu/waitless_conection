@@ -1,4 +1,7 @@
 import { useState } from "react";
+import {getOrderByPrismaID, createOrderWithPrisma, updateOrderWithPrisma, deleteOrderWithPrisma } from '../../../index.js'
+import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida, crearPedido} from '../../../nodejs/fetch';
+import {} from '../../../nodejs/main.js';
 interface Props {
   titulo: string;
   descripcion: string;
@@ -13,20 +16,20 @@ export interface Order {
   price: string;
 }
 const FooterPopUp: React.FC<Props> = ({ titulo, descripcion, precio, setShowPopUP, setShowMenu }) => {
-  const [cantidad, setCantidad] = useState(0);
+  const [cantidad, setCantidad] = useState(1);
   const [pedido, setPedido] = useState<Order[]>([]);
   const handleClickSumar = () => {
     setCantidad(cantidad + 1);
   };
 
   const handleClickRestar = () => {
-    if (cantidad >= 1) {
+    if (cantidad > 1) {
       setCantidad(cantidad - 1);
     }
   };
 
   const handlePedido = () => {
-    addPedido(titulo, descripcion, precio);
+    crearPedido()
     console.log(pedido);
     setShowPopUP(false);
     setShowMenu(true);
