@@ -116,9 +116,7 @@ export default function Menu() {
   const handleClickArrowBack = (pedido: boolean, Menu: boolean) => {
     setShowPedido(pedido);
     setShowMenu(Menu);
-    var a = document.getElementById("div1");
-    var distancia = a?.offsetTop;
-    console.log(distancia);
+    
   }
 
   return (
@@ -225,7 +223,7 @@ export default function Menu() {
                 </div>
               ))}
             </div>
-            <FooterMenu setShowPedido={setShowPedido} setShowMenu={setShowMenu} />
+            <FooterMenu setShowPedido={setShowPedido} setShowMenu={setShowMenu} setShowPedidoEnviado={setShowMenu} EstadoPedidoEnviado={false} EstadoPedido={true} EstadoMenu={false} txtBoton="Ver Pedido"/>
           </>
         ) : (<></>)}
         {showPedido ? (
