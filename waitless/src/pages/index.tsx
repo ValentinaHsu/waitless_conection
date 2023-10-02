@@ -5,6 +5,7 @@ import ScrollBar from "../components/scrollbar";
 import HeaderMenu from "../components/headerMenu";
 import PopUp from "../components/PopUp";
 import FooterMenu from "../components/footerMenu";
+import ContenidoPedido  from "../components/ContenidoPedido";
 import { useQuery } from '@tanstack/react-query';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida, crearPedido } from '../../../nodejs/fetch';
@@ -28,72 +29,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Menu() {
   const [menu, setMenu] = useState<MenuTypes[]>([]);
-
-  // const entradas = [
-  //   {
-  //     nombre: "Provoleta",
-  //     imagen: "/provoleta.jpg",
-  //     descripcion: "Deliciosa provoleta de leche de vaca fundida, acompañada de sabrosos condimentos",
-  //     precio: "2234",
-  //   },
-  //   [
-  //     "Empanadas",
-  //     "/empanada.jpg",
-  //     "Deliciosas empanadas argentinas rellenas de carne, pollo, verduras o queso, horneadas hasta la perfección",
-  //     "8113",
-  //   ],
-  //   [
-  //     "Humita",
-  //     "/Humitas.jpg",
-  //     "Sabrosa humita argentina a base de choclo (maíz tierno) y condimentos, acompañada de pan casero",
-  //     "5296",
-  //   ],
-  //   [
-  //     "Pastel de papas",
-  //     "/pasteldepapa.jpg",
-  //     "Nuestro suculento pastel de papas argentino, capas de puré de papas con carne molida y gratinado al horno",
-  //     "2754",
-  //   ],
-  // ];
-
-  // const principales = [
-  //   [
-  //     "Asado",
-  //     "/asado.jpg",
-  //     "El exquisito asado argentino, preparado a la perfección en nuestra parrilla",
-  //     "4675",
-  //   ],
-  //   [
-  //     "Milanesa",
-  //     "/provoleta.jpg",
-  //     "Irresistible milanesa argentina de carne empanada y frita, acompañada de guarnición",
-  //     "6231",
-  //   ],
-  //   [
-  //     "Locro",
-  //     "/provoleta.jpg",
-  //     "Nuestro delicioso locro argentino, un guiso tradicional con maíz, porotos, carne de cerdo y verduras",
-  //     "3678",
-  //   ],
-  //   [
-  //     "Matambre",
-  //     "/provoleta.jpg",
-  //     "Exquisito matambre argentino relleno y enrollado, servido con guarnición de temporada",
-  //     "4261",
-  //   ],
-  //   [
-  //     "Pastel de papas",
-  //     "/provoleta.jpg",
-  //     "Nuestro suculento pastel de papas argentino, capas de puré de papas con carne molida y gratinado al horno",
-  //     "2754",
-  //   ],
-  // ];
-
-  // const postres = [
-  //   ["Dulce de Leche", "/dulcedeleche.jpeg", "dulce de leche", "300"],
-  //   ["Flan", "", "Mixto o bala", "1000"],
-  // ];
-  //const entrada = "Entrada";
 
   const separateMenuItemsByCategory = (menuItems: MenuTypes[]): MenuTypes[][] => {
     let platoEntrada: MenuTypes[] = [];
@@ -295,43 +230,7 @@ export default function Menu() {
         ) : (<></>)}
         {showPedido ? (
           <>
-            <div className="h-screen w-screen pb-[7px] bg-white overflow-x-hidden no-scrollbar">
-              <header className="top-0 w-full h-[67px] flex items-center justify-center bg-white drop-shadow-md relative" >
-                <h3 className="font-bold text-black">Pedido de tu mesa</h3>
-                <button className=" absolute left-0 ml-4 h-[25px] w-[25px] " onClick={(event) => handleClickArrowBack(false, true)}>
-                  <img src="arrowBlack.svg" alt="" className="h-full w-full" />
-                </button>
-              </header>
-              <div className="h-full w-full p-2">
-                <div className="w-full h-fit ">
-                  <hr className="bg-LineaVerdePedido mt-9 h-[2px]" />
-                  <h3 className="text-black pl-2 pt-16 overflow-hidden inline-flex"> Papa al horno</h3>
-                  <p className="pl-2 text-letraGris">aaaaaaaaaaaaaaaaaaa</p>
-                  <p className="pl-2 text-letraGrisOscuro pt-1 pb-4">500$</p>
-                  <div className="w-full h-fit flex justify-center">
-                    <hr className="border-b bg-LineaPedido w-[90%] h-px mb-4" />
-                  </div>
-                </div>
-                <div className="w-full h-fit ">
-                  <h3 className="text-black pl-2 pt-6 overflow-hidden inline-flex"> Papa al horno</h3>
-                  <p className="pl-2 text-letraGris">aaaaaaaaaaaaaaaaaaa</p>
-                  <p className="pl-2 text-letraGrisOscuro pt-1 pb-4">500$</p>
-                  <div className="w-full h-fit flex justify-center">
-                    <hr className="border-b bg-LineaPedido w-[90%] h-px mb-4" />
-                  </div>
-                </div>
-                <div className="w-full h-fit ">
-                  <h3 className="text-black pl-2 pt-6 overflow-hidden inline-flex"> Papa al horno</h3>
-                  <p className="pl-2 text-letraGris">aaaaaaaaaaaaaaaaaaa</p>
-                  <p className="pl-2 text-letraGrisOscuro pt-1 pb-4">500$</p>
-                  <div className="w-full h-fit flex justify-center">
-                    <hr className="border-b bg-LineaPedido w-[90%] h-px mb-4" />
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
+             <ContenidoPedido setShowMenu={setShowMenu} setShowPedido={setShowPedido} />
           </>
         ) : (<></>)}
       </div>
