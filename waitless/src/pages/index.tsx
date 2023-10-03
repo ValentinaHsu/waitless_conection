@@ -8,7 +8,7 @@ import FooterMenu from "../components/footerMenu";
 import ContenidoPedido  from "../components/ContenidoPedido";
 import { useQuery } from '@tanstack/react-query';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida, crearPedido } from '../../../nodejs/fetch';
+import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida,  } from '../../../nodejs/fetch';
 import axios from "axios";
 
 export interface MenuTypes {
