@@ -14,7 +14,6 @@
     "@types/node": "18.16.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
-    "net": "^1.0.2",
     "next": "^13.4.19",
     "package-name": "^0.1.0",
     "postcss": "8.4.23",
@@ -30,6 +29,7 @@
   "browser": {
     "fs": false,
     "path": false,
-    "os": false
+    "os": false,
+    "net": false
   }
 }

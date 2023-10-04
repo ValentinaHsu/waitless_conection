@@ -3,7 +3,7 @@ import express from 'express';
 import cors from "cors"
 import { getAllFoodWithPrisma, getFoodWithPrisma, createFoodWithPrisma, updateFoodWithPrisma, deleteFoodWithPrisma, getAllOrderWithPrisma } from '../index.js'
 const app = express();
-const PORT = 3001;
+const PORT = 3002;
 
 app.use(bodyParser.json());
 app.use(express.json())

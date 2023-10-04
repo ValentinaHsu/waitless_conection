@@ -8,7 +8,7 @@ import FooterMenu from "../components/footerMenu";
 import ContenidoPedido  from "../components/ContenidoPedido";
 import { useQuery } from '@tanstack/react-query';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida,  } from '../../../nodejs/fetch';
+import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida, crearPedido} from '../../../nodejs/fetch';
 import axios from "axios";
 
 export interface MenuTypes {
@@ -70,7 +70,7 @@ export default function Menu() {
 
   const getAllMenus = async () => {
     try {
-      await axios.get("http://localhost:3001/menu").then((response) => {
+      await axios.get("http://localhost:3002/menu").then((response) => {
         console.log(response)
         response.data !== [] ? setMenu(response.data.data) : setMenu([])
       }).catch((err) => console.log(err))

@@ -1,5 +1,5 @@
 import { QueryClientProvider, QueryClient, useQueryClient } from '@tanstack/react-query'
-import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida } from '../../../backend/routes/apiFetch'
+import { llamarTodoMenu, llamarComida, crearComida, actualizarComida, borrarComida } from '../../../nodejs/fetch'
 import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
